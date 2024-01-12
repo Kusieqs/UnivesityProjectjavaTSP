@@ -1,10 +1,29 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numberOfVertices;
+        do {
+            System.out.println("\nPodaj liczbe wierzcholkow");
+            if(scanner.hasNextInt()) {
+                numberOfVertices = scanner.nextInt();
+                if(numberOfVertices <= 0)
+                {
+                    continue;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            scanner.next();
+        }while(true);
+        scanner.close();
 
-        int numberOfVertices = 10; // liczba wierzchołków
         List<Vertex> vertices = randVertices(numberOfVertices); // lista losowo wygenerowanych wierzchołków
 
         System.out.println("Początkowe wierzchołki:");
@@ -16,7 +35,7 @@ public class Main {
 
         System.out.println("\nOptymalna droga:");
         for (Vertex vertex : P) {
-            System.out.println("Wierzchołek (" + vertex.getX() + ", " + vertex.getY() + ")"); //lista optymalnej drogi
+            System.out.println("Wierzchołek (" + vertex.getX() + ", " + vertex.getY() + ")\t\t(Odleglosc od poprzedniego wierzcholka: " + vertex.getDlugosc()); //lista optymalnej drogi
         }
     }
     private static List<Vertex> randVertices(int numberOfVertices) { //metoda tworzenia listy losowych wierzchołków
@@ -28,7 +47,6 @@ public class Main {
             double y = random.nextDouble() * 10; // losowe y od 0 do 10
             vertices.add(new Vertex(x, y));
         }
-
         return vertices; //zwrócenie listy wierzchołków
     }
 

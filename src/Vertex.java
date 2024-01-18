@@ -18,7 +18,7 @@ public class Vertex { //klasa wierzchołek
         this.dlugosc = dlugosc;
     }
 
-    public double dist(Vertex other) { //metoda obliczająca dystans między wierzchołkami
+    public double Dist(Vertex other) { //metoda obliczająca dystans między wierzchołkami
         double dx = other.x - this.x;
         double dy = other.y - this.y;
         return Math.sqrt(dx * dx + dy * dy);

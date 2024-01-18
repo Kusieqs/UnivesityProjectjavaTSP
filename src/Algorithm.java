@@ -19,7 +19,7 @@ public class Algorithm {
 
             // wybierz wierzchołek z K znajdujący się najbliżej wcześniej wybranego wierzchołka
             for (int i = 0; i < K.size(); i++) { //ponawiaj tak długo, dopóki są wierzchołki w K
-                double dystans = w1.dist(K.get(i)); //wyznacz łączną trasę
+                double dystans = w1.Dist(K.get(i)); //wyznacz łączną trasę
                 if (dystans < najmn) {
                     najmn = dystans;
                     najbindex = i;
